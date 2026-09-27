@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ashwani Shahi | Senior Azure DevOps Engineer</title>
+
+  <meta
+    name="description"
+    content="Ashwani Shahi - Senior Azure DevOps Engineer specializing in Azure, Terraform, Kubernetes, AKS, CI/CD, DevSecOps and Cloud Infrastructure."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050b14;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 11, 20, 0.95);
+      border-bottom: 1px solid #1d2b3d;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #58a6ff;
+    }
+
+    .logo span {
+      color: #7ee787;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #c9d1d9;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #58a6ff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #238636;
+      color: #7ee787;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .blue {
+      color: #58a6ff;
+    }
+
+    .green {
+      color: #7ee787;
+    }
+
+    .hero h2 {
+      color: #8b949e;
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #8b949e;
+      max-width: 700px;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 7px;
+      border: 1px solid #30363d;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #238636;
+      border-color: #238636;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2ea043;
+    }
+
+    .btn-secondary {
+      background: #161b22;
+    }
+
+    .btn-secondary:hover {
+      border-color: #58a6ff;
+      color: #58a6ff;
+    }
+
+    /* TERMINAL */
+
+    .terminal {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .terminal-header {
+      background: #161b22;
+      padding: 12px 16px;
+      display: flex;
+      gap: 7px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #8b949e;
+    }
+
+    .terminal-body {
+      padding: 25px;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      min-height: 320px;
+    }
+
+    .prompt {
+      color: #7ee787;
+    }
+
+    .command {
+      color: #58a6ff;
+    }
+
+    .output {
+      color: #8b949e;
+      margin-bottom: 18px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+      border-top: 1px solid #161b22;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #8b949e;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      background: #0d1117;
+      border: 1px solid #21262d;
+      padding: 25px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      border-color: #58a6ff;
+    }
+
+    .skill h3 {
+      color: #58a6ff;
+      margin-bottom: 8px;
+    }
+
+    .skill p {
+      color: #8b949e;
+      font-size: 14px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      background: #0d1117;
+      border: 1px solid #21262d;
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .project:hover {
+      border-color: #7ee787;
+    }
+
+    .project h3 {
+      color: #7ee787;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #8b949e;
+      margin-bottom: 15px;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech span {
+      background: #161b22;
+      border: 1px solid #30363d;
+      padding: 5px 9px;
+      border-radius: 5px;
+      font-size: 12px;
+      color: #58a6ff;
+    }
+
+    /* ARCHITECTURE */
+
+    .architecture {
+      background: #0d1117;
+      border: 1px solid #21262d;
+      padding: 35px;
+      border-radius: 12px;
+      text-align: center;
+      font-family: Consolas, monospace;
+      overflow-x: auto;
+    }
+
+    .architecture pre {
+      color: #7ee787;
+      text-align: left;
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    /* STATS */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 25px;
+      background: #0d1117;
+      border: 1px solid #21262d;
+      border-radius: 10px;
+    }
+
+    .stat h3 {
+      color: #58a6ff;
+      font-size: 35px;
+    }
+
+    .stat p {
+      color: #8b949e;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .contact p {
+      color: #8b949e;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      border-top: 1px solid #21262d;
+      padding: 30px;
+      text-align: center;
+      color: #8b949e;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <div class="logo">
+        ASHWANI<span>.DEVOPS</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="about">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="tag">
+          ● AVAILABLE FOR DEVOPS OPPORTUNITIES
+        </div>
+
+        <h1>
+          Ashwani<br>
+          <span class="blue">Shahi</span>
+        </h1>
+
+        <h2>
+          Senior Azure DevOps Engineer
+        </h2>
+
+        <p>
+          9+ years of IT experience with strong hands-on experience
+          in Azure, Terraform, Kubernetes, AKS, CI/CD, DevSecOps,
+          Infrastructure as Code and cloud automation.
+        </p>
+
+        <div class="buttons">
+
+          <a class="btn btn-primary" href="#projects">
+            🚀 View Projects
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/Ashwanishahi155"
+            target="_blank"
+          >
+            GitHub
+          </a>
+
+          <a class="btn btn-secondary" href="#contact">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- TERMINAL -->
+
+      <div class="terminal">
+
+        <div class="terminal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div class="terminal-body">
+
+          <div>
+            <span class="prompt">ashwani@devops:~$</span>
+            <span class="command"> kubectl get pods</span>
+          </div>
+
+          <div class="output">
+            NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            READY&nbsp;&nbsp;&nbsp;STATUS
+            <br>
+            axion-ui&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            1/1&nbsp;&nbsp;&nbsp;&nbsp;Running
+            <br>
+            telemetry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            1/1&nbsp;&nbsp;&nbsp;&nbsp;Running
+            <br>
+            postgress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            1/1&nbsp;&nbsp;&nbsp;&nbsp;Running
+          </div>
+
+
+          <div>
+            <span class="prompt">ashwani@devops:~$</span>
+            <span class="command"> terraform plan</span>
+          </div>
+
+          <div class="output">
+            Plan: 8 to add, 0 to change, 0 to destroy.
+          </div>
+
+
+          <div>
+            <span class="prompt">ashwani@devops:~$</span>
+            <span class="command"> az aks show</span>
+          </div>
+
+          <div class="output">
+            Kubernetes cluster: aks-axion<br>
+            Status: Running<br>
+            Network: Azure CNI Overlay
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STATS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="stats">
+
+        <div class="stat">
+          <h3>9+</h3>
+          <p>Years IT Experience</p>
+        </div>
+
+        <div class="stat">
+          <h3>6+</h3>
+          <p>Years DevOps</p>
+        </div>
+
+        <div class="stat">
+          <h3>10+</h3>
+          <p>Cloud & DevOps Tools</p>
+        </div>
+
+        <div class="stat">
+          <h3>∞</h3>
+          <p>Automation Mindset</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>DevOps Stack</h2>
+
+        <p>
+          Technologies I use for cloud infrastructure,
+          automation and production workloads.
+        </p>
+
+      </div>
+
+
+      <div class="skills">
+
+        <div class="skill">
+          <h3>☁️ Azure</h3>
+          <p>
+            AKS, VNet, Application Gateway, WAF, Key Vault,
+            Azure Monitor, Log Analytics, RBAC and Azure Policy.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>🏗️ Terraform</h3>
+          <p>
+            Infrastructure as Code, modules, remote backend,
+            state management, drift, import and lifecycle.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>☸️ Kubernetes</h3>
+          <p>
+            AKS, Deployments, Services, Ingress, HPA,
+            ConfigMaps, Secrets and troubleshooting.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>🔄 CI/CD</h3>
+          <p>
+            Azure DevOps, GitHub, pipelines, reusable templates,
+            WIF authentication and automated deployments.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>🐳 Docker</h3>
+          <p>
+            Containerization, multi-stage Dockerfiles,
+            image optimization and Azure Container Registry.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>🔐 DevSecOps</h3>
+          <p>
+            TFsec, TFLint, TruffleHog, RBAC,
+            Key Vault and secure CI/CD practices.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>📊 Monitoring</h3>
+          <p>
+            Prometheus, Grafana, Azure Monitor,
+            Log Analytics and LGTM stack.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>⚙️ Ansible</h3>
+          <p>
+            Linux automation, inventory management,
+            configuration management and server provisioning.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Featured Projects</h2>
+
+        <p>
+          Practical cloud and DevOps labs built around real-world scenarios.
+        </p>
+
+      </div>
+
+
+      <div class="projects">
+
+        <div class="project">
+
+          <h3>🚀 Azure AKS Platform</h3>
+
+          <p>
+            Production-style AKS platform using Azure CNI Overlay,
+            Application Gateway, Ingress, HPA and private networking.
+          </p>
+
+          <div class="tech">
+            <span>Azure</span>
+            <span>AKS</span>
+            <span>Kubernetes</span>
+            <span>Application Gateway</span>
+            <span>Terraform</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <h3>🏗️ Terraform Infrastructure</h3>
+
+          <p>
+            Modular Azure infrastructure using Terraform with
+            remote state, reusable modules, networking and governance.
+          </p>
+
+          <div class="tech">
+            <span>Terraform</span>
+            <span>Azure</span>
+            <span>IaC</span>
+            <span>Modules</span>
+            <span>Azure Policy</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <h3>🔐 Azure DevOps WIF</h3>
+
+          <p>
+            Passwordless Azure DevOps authentication using
+            Entra App Registration and Workload Identity Federation.
+          </p>
+
+          <div class="tech">
+            <span>Azure DevOps</span>
+            <span>Entra ID</span>
+            <span>WIF</span>
+            <span>RBAC</span>
+            <span>Terraform</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <h3>📊 LGTM Observability</h3>
+
+          <p>
+            Open-source observability architecture using Grafana,
+            Loki, Grafana Tempo and Grafana Mimir for logs,
+            traces and metrics.
+          </p>
+
+          <div class="tech">
+            <span>Grafana</span>
+            <span>Loki</span>
+            <span>Tempo</span>
+            <span>Mimir</span>
+            <span>Prometheus</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <h3>🤖 AI Infrastructure Remediation</h3>
+
+          <p>
+            AI-assisted infrastructure troubleshooting concept
+            designed to detect Terraform, Azure and Kubernetes
+            failures and suggest remediation.
+          </p>
+
+          <div class="tech">
+            <span>AI</span>
+            <span>Terraform</span>
+            <span>Azure</span>
+            <span>AKS</span>
+            <span>AIOps</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <h3>🛡️ DevSecOps Pipeline</h3>
+
+          <p>
+            CI/CD security pipeline integrating infrastructure
+            validation, secret scanning, linting and cost analysis.
+          </p>
+
+          <div class="tech">
+            <span>Azure DevOps</span>
+            <span>TFsec</span>
+            <span>TFLint</span>
+            <span>TruffleHog</span>
+            <span>Infracost</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ARCHITECTURE -->
+
+  <section id="architecture">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Cloud Architecture</h2>
+
+        <p>
+          Example Azure DevOps platform architecture
+        </p>
+
+      </div>
+
+
+      <div class="architecture">
+
+<pre>
+                    ┌─────────────────────────┐
+                    │       Developer         │
+                    │     Git / GitHub        │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │      CI/CD Pipeline     │
+                    │     Azure DevOps        │
+                    └────────────┬────────────┘
+                                 │
+                   ┌─────────────┴─────────────┐
+                   │                           │
+                   ▼                           ▼
+          ┌─────────────────┐        ┌─────────────────┐
+          │    Terraform    │        │ Docker / ACR    │
+          │       IaC        │        │ Container Image │
+          └────────┬────────┘        └────────┬────────┘
+                   │                           │
+                   └─────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │          AKS            │
+                    │      Kubernetes         │
+                    └────────────┬────────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              │                  │                  │
+              ▼                  ▼                  ▼
+        Application          Monitoring          Database
+         Gateway              LGTM /              PostgreSQL
+          + WAF              Azure Monitor
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact">
+
+        <div class="section-title">
+
+          <h2>Let's Connect</h2>
+
+          <p>
+            Open to Azure DevOps, Cloud Infrastructure and DevOps opportunities.
+          </p>
+
+        </div>
+
+        <div class="buttons" style="justify-content:center;">
+
+          <a
+            class="btn btn-primary"
+            href="mailto:shahi.ashwani071@gmail.com"
+          >
+            📧 Email Me
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/Ashwanishahi155"
+            target="_blank"
+          >
+            GitHub Profile
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Ashwani Shahi · Senior Azure DevOps Engineer
+
+    <br>
+
+    Azure · Terraform · Kubernetes · AKS · CI/CD · DevSecOps
+
+  </footer>
+
+</body>
+</html>
