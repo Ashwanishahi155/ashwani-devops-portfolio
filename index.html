@@ -396,6 +396,115 @@
       font-size: 13px;
     }
 
+
+    /* AUTOMATED PORTFOLIO ANIMATIONS */
+    @keyframes tagPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(126,231,135,0.0); }
+      50% { box-shadow: 0 0 0 7px rgba(126,231,135,0.08); }
+    }
+
+    @keyframes terminalGlow {
+      0%, 100% { box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 rgba(88,166,255,0); }
+      50% { box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 28px rgba(88,166,255,0.10); }
+    }
+
+    @keyframes liveDot {
+      0%, 100% { opacity: 0.45; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+
+    @keyframes cursorBlink {
+      0%, 45% { opacity: 1; }
+      46%, 100% { opacity: 0; }
+    }
+
+    @keyframes scanLine {
+      0% { transform: translateX(-130%); opacity: 0; }
+      15% { opacity: 0.35; }
+      85% { opacity: 0.35; }
+      100% { transform: translateX(130%); opacity: 0; }
+    }
+
+    @keyframes outputPulse {
+      0%, 100% { opacity: 0.82; }
+      50% { opacity: 1; }
+    }
+
+    .tag {
+      animation: tagPulse 2.8s ease-in-out infinite;
+    }
+
+    .terminal {
+      position: relative;
+      animation: terminalGlow 4s ease-in-out infinite;
+    }
+
+    .terminal::after {
+      content: "";
+      position: absolute;
+      top: 48px;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        rgba(88,166,255,0),
+        rgba(88,166,255,0.45),
+        rgba(126,231,135,0)
+      );
+      filter: blur(1px);
+      animation: scanLine 4.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .terminal-header::after {
+      content: "● LIVE";
+      margin-left: auto;
+      color: #7ee787;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      animation: liveDot 1.8s ease-in-out infinite;
+    }
+
+    .terminal-body .output {
+      animation: outputPulse 3.5s ease-in-out infinite;
+    }
+
+    .terminal-body > div:nth-last-child(2) .command::after {
+      content: " ▋";
+      color: #7ee787;
+      animation: cursorBlink 1s steps(1) infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tag,
+      .terminal,
+      .terminal::after,
+      .terminal-header::after,
+      .terminal-body .output,
+      .terminal-body > div:nth-last-child(2) .command::after {
+        animation: none;
+      }
+    }
+
+
+    .automation-status {
+      margin-top: 6px;
+      padding-top: 10px;
+      border-top: 1px solid #21262d;
+      color: #8b949e;
+      font-size: 11px;
+      letter-spacing: 0.2px;
+    }
+
+    .automation-status span {
+      color: #7ee787;
+      animation: liveDot 1.6s ease-in-out infinite;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
     /* MOBILE */
 
     @media (max-width: 900px) {
